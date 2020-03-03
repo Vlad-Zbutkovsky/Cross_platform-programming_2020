@@ -1,7 +1,7 @@
 let map;
 let marker;
 let myLatLng = {lat: 49.2327800, lng: 28.4809700};
-let weatherAPI = "http://api.openweathermap.org/data/2.5/weather?lat="+myLatLng.lat+"&lon="+myLatLng.lng+"&lang=ua&APPID=0b93cd070c7162d5291e75495a66f000";
+let weatherAPI = "https://api.openweathermap.org/data/2.5/weather?lat="+myLatLng.lat+"&lon="+myLatLng.lng+"&lang=ru&appid=0b93cd070c7162d5291e75495a66f000";
 let baseWeather;
 	getWeather(weatherAPI);
     function initMap() {
@@ -39,7 +39,7 @@ let baseWeather;
         placeMarker(e.latLng, map);
         myLatLng.lat = e.latLng.lat();
         myLatLng.lng = e.latLng.lng();
-        var weatherAPI = "http://api.openweathermap.org/data/2.5/weather?lat="+myLatLng.lat+"&lon="+myLatLng.lng+"&lang=ua&APPID=0b93cd070c7162d5291e75495a66f000";
+        var weatherAPI = "https://api.openweathermap.org/data/2.5/weather?lat="+myLatLng.lat+"&lon="+myLatLng.lng+"&lang=ru&appid=0b93cd070c7162d5291e75495a66f000";
         getWeather(weatherAPI);
         });
  		function placeMarker(location) {
@@ -75,7 +75,7 @@ let baseWeather;
         }
         function showWeather(){
           contentInfo = 
-          "<br>"+"  Обране місто : "+"<br>"+baseWeather.name +"<br>"+"<br>"+"  Погода :"+"<br>"+baseWeather.weather[0].description +"<br>"+"<br>"+
+          "<br>"+"    Обране місто : "+"<br>"+baseWeather.name +"<br>"+"<br>"+"  Погода :"+"<br>"+baseWeather.weather[0].description +"<br>"+"<br>"+
           "  Температура : " +"<br>"+ Math.floor(baseWeather.main.temp - 273.15) +" °C"+"<br>"+"<br>";
           document.getElementById('display').innerHTML=contentInfo +"<br>"+'<image src="http://openweathermap.org/img/w/'+baseWeather.weather[0].icon+'.png" hspace="65" height="70" width="70">';
         }
